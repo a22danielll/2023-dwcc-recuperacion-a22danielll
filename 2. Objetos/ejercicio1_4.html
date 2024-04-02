@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const flightsInfo = '_Delayed_Departure;scq93766109;bio2133758440;11:25';
+      // engade o teu código aquí
+      let info = flightsInfo.split(';');
+      let infoVoo =
+        info[0].replaceAll('_', ' ') +
+        ' ' +
+        info[1].slice(0, 3).toUpperCase() +
+        ' ' +
+        info[2].slice(0, 3).toUpperCase() +
+        ' (' +
+        info[3].replace(':', 'h') +
+        ')';
+      console.log(infoVoo); // 'Delayed Departure SCQ BIO (11h25)'
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function enmascarar(cadea) {
+        return cadea.slice(-4).padStart(cadea.length, '*');
+      }
+      console.log(enmascarar('1234123412347777')); // ************7777
+    </script>
+  </body>
+</html>

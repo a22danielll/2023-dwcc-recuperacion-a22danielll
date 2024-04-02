@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(
+        '6. Cálculo do IMC (índice de masa corporal). IMC = peso (kg) / [estatura (m)]2'
+      );
+      console.log('a. Almacena en variables o peso e altura de dúas persoas.');
+      let peso1 = 60;
+      let peso2 = 70;
+      let altura1 = 1.6;
+      let altura2 = 1.7;
+      console.log('b. Calcula o IMC das dúas persoas.');
+      let p1 = peso1 / altura1 ** 2;
+      let p2 = peso2 / altura2 ** 2;
+      console.log(p1.toFixed(2));
+      console.log(p2.toFixed(2));
+      console.log(
+        "c. Indica que persoa ten o maior IMC cunha cadea similar a: 'O IMC (25.3) da primeira persoa é maior que o da segunda persoa (22.5)!'"
+      );
+      if (p1 > p2) {
+        console.log('la persona 1 pesa mas que la persona 2');
+      } else if (p1 < p2) {
+        console.log('la persona 2 pesa mas que la persona 1');
+      } else {
+        console.log('las dos personas pensan lo mismo');
+      }
+    </script>
+  </body>
+</html>
