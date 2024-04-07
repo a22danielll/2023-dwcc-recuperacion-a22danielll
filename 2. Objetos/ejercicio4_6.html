@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inicio = new Date('2024-01-01');
+        let actual = Date.now();
+        function diferenciaDias(f1,f2){
+            let diferencia = Math.floor((f2 - f1) / (1000*60*60*24));
+            return diferencia;
+
+        }
+        console.log(diferenciaDias(inicio,actual));
+    </script>
+</body>
+</html>
