@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function uperCase(str) {
+        str = str.split(' ');
+        let text  = '';
+        for (let i of str) {
+            i = i.charAt(0).toUpperCase() + i.slice(1)+' ';
+            text += i;
+        }
+        return text;
+      }
+      console.log(uperCase('hola que tal'));
+    </script>
+  </body>
+</html>
