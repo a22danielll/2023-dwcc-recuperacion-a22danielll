@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = ['first_name', 'last_NAME'];
+        function camelCase(arr){
+            for (const iterator of arr) {
+                let [i,x]= iterator.split('_');
+                console.log(i.toLowerCase()+x.toUpperCase().charAt(0)+x.toLowerCase().slice(1));
+            }
+            
+        }
+        camelCase(array);
+    </script>
+</body>
+</html>

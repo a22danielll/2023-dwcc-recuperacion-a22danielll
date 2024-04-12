@@ -35,6 +35,22 @@
           "Gotze",
         ],
       ];
+
+      let player1 = players[0];
+      let player2 = players[1];
+      console.log(player1);
+      console.log(player2);
+
+      let gk = player1.slice(0, 1);
+      let fieldPlayers = player1.slice(1);
+      console.log(`Portero ${gk} \nplayers: ${fieldPlayers} `);
+
+      let allPlayers = [...player1, ...player2];
+      console.log(allPlayers);
+
+      let playersSustitutos = ["Thiago", "Coutinho", "Periscic"];
+      let players1Final = [...player1, ...playersSustitutos];
+      console.log(players1Final);
     </script>
   </body>
 </html>
