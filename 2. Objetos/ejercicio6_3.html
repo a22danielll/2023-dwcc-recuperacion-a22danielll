@@ -11,7 +11,7 @@
         let separador = flightsInfo.split('+');
         for (const i of separador) {
             let [p1,p2,p3,p4]= i.split(';');
-            console.log(p1.replaceAll('_',' ')+' '+p2.slice(0,3).toUpperCase());
+            console.log(p1.replaceAll('_',' ')+' '+p2.slice(0,3).toUpperCase()+' '+p3.slice(0,3).toUpperCase() +' ('+p4.replace(':','h')+')');
             
             
         }
