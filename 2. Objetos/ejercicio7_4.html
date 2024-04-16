@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let library = [
+        {
+          title: 'The Catcher in the Rye',
+          author: 'JD Salinger',
+          status: { own: true, reading: true, read: false },
+        },
+        {
+          title: 'Harry Potter',
+          author: 'autor2',
+          status: { own: true, reading: true, read: false },
+        },
+        {
+          title: 'Harry Potter y la piedra filosofal',
+          author: 'autor3',
+          status: { own: true, reading: true, read: false },
+        },
+      ];
+
+      /*for (let i = 0; i < library.length; i++) {
+              library[i].status.read = true;
+            }*/
+      //console.log(library);
+      library.forEach((element) => {
+        element.status.read = true;
+      });
+      console.log(library);
+
+      let [firstBook] = library;
+      console.log(firstBook.title);
+
+      let string = JSON.stringify(library);
+      console.log(string);
+    </script>
+  </body>
+</html>

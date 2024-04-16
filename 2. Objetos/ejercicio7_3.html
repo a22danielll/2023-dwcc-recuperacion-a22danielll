@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const game = {
+        scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+      };
+      console.log('a');
+      game.scored.forEach((players, goals) => {
+        console.log(`Gol ${goals + 1}: ${players}`);
+      });
+      /**
+       * Revisar
+       */
+      /*for (let i = 0; i < game.scored.length; i++) {
+        const element = game.scored[i];
+        for (let x = 0; x < game.scored.length; x++) {
+          const element2 = game.scored[x];
+          console.log(element2);
+        }
+      }*/
+      console.log('b');
+      let scorers = {};
+      for (i of game.scored) {
+        if (!scorers[i]) {
+          scorers[i] = 1;
+        } else {
+          scorers[i] += 1;
+        }
+      }
+      console.log(scorers);
+    </script>
+  </body>
+</html>
