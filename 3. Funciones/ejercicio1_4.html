@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*let promedio = (arr) => {
+        return (
+          arr.reduce((acumilador, value) => acumilador + value) / arr.length
+        );
+      };
+      console.log(promedio([5, 5, 5, 5, 5]));*/
+      let array = [10, 5];
+      let suma = (num1) => {
+        let total = 0;
+        num1.forEach((element) => {
+          total += element;
+        });
+        return total/num1.length;
+      };
+      console.log(suma(array));
+    </script>
+  </body>
+</html>
