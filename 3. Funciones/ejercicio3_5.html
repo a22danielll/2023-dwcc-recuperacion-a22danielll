@@ -24,14 +24,24 @@
       console.log("a");
       console.log(inventors.filter((x) => x.year >= 1500 && x.year < 1600));
       console.log("b");
-      let inventores =inventors.map((x) => x.first + ' '+x.last);
+      let inventores = inventors.map((x) => x.first + " " + x.last);
       console.log(inventores);
       console.log("c");
-      console.log(inventores.sort((a,b)=>a.split(' ')[1].localeCompare(b.split(' ')[1])));
+      console.log(
+        inventores.sort((a, b) =>
+          a.split(" ")[1].localeCompare(b.split(" ")[1])
+        )
+      );
       console.log("d");
+      console.log(inventors.sort((a, b) => a.last.localeCompare(b.last)));
       console.log("e");
+      console.log(inventors.sort((a, b) => a.year - b.year));
       console.log("f");
+      console.log(inventors.reduce((acc, x) => acc + (x.passed - x.year), 0));
       console.log("g");
+      console.log(
+        inventors.sort((a, b) => b.passed - b.year - (a.passed - a.year))
+      );
     </script>
   </body>
 </html>
