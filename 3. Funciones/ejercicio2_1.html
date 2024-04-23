@@ -7,7 +7,9 @@
 </head>
 <body>
     <script>
-        
+        const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
+        let total = objects.reduce((acc, valor) =>acc + valor.x, 0);
+        console.log(total);
     </script>
 </body>
 </html>

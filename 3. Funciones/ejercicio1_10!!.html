@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let cantidadBilletes = (cantidades) => {
+        let billetes = [
+          { cantidad: 500 },
+          { cantidad: 200 },
+          { cantidad: 100 },
+          { cantidad: 50 },
+          { cantidad: 20 },
+          { cantidad: 10 },
+          { cantidad: 5 },
+          { cantidad: 2 },
+          { cantidad: 1 },
+          { cantidad: 0.50 },
+          { cantidad: 0.20 },
+          { cantidad: 0.10 },
+          { cantidad: 0.05 },
+          { cantidad: 0.02 },
+          { cantidad: 0.01 },
+        ];
+        let cambio ={};
+        for (let i of billetes) {
+            let monedas =  Math.floor(cantidades/i.cantidad);
+            if (monedas>0) {
+                
+            }
+        }
+        return cambio;
+      };
+      console.log(cantidadBilletes(375.50));
+    </script>
+  </body>
+</html>

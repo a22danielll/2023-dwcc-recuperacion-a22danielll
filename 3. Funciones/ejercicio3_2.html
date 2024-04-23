@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dias = ['domingo', 'lunes','martes','miercoles','jueves','jueves','viernes','sabado'];
+        console.log('a');
+        console.log(dias.filter((x)=>x.charAt(0)=='m'));
+        console.log('b');
+        console.log(dias.some((x)=>x.charAt(0)=='s')?'hay dias que empiezan por s':'no hay dias que empiecen por s');
+        console.log('c');
+        console.log(dias.every((x)=>x.charAt(0)=='s')?'todos los dias empiezan por la letra s':'ningun dia empieza por la letra s');
+        console.log('d');
+        console.log(dias.find((x)=>x.charAt(0)=='m')?'el primer dia empieza por m':'el primer dia no empieza por m');
+        console.log('e');
+        console.log(dias.findIndex((x)=>x.charAt(0)=='m'));
+        console.log('f');
+        console.log(dias.map((x)=>x.toUpperCase()));
+    </script>
+</body>
+</html>
