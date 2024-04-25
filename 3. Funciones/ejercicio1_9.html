@@ -10,10 +10,10 @@
       let buscarPatron = (texto, patron) => {
         let contador = 0;
 
-        for (const i of texto) {
+        for (let i = 0; i < texto.length; i++) {
           let check = true;
-          for (const j of patron) {
-            if (texto[i + j] != patron[j]) {
+          for (let x = 0; x < patron.length; x++) {
+            if (texto[i + x] != patron[x]) {
               check = false;
             }
           }
@@ -24,7 +24,7 @@
 
         return contador;
       };
-      console.log(buscarPatron("000111101000ABCHO", "00"));
+      console.log(buscarPatron('000111101000ABCHO', '00'));
     </script>
   </body>
 </html>
