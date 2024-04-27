@@ -28,9 +28,11 @@
         let cambio ={};
         for (let i of billetes) {
             let monedas =  Math.floor(cantidades/i.cantidad);
+            console.log(monedas);
             if (monedas>0) {
-                
-            }
+                cambio[i.cantidad] = monedas;
+                cantidades -= monedas*i.cantidad; 
+              }
         }
         return cambio;
       };

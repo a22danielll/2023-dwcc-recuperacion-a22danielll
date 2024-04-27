@@ -10,8 +10,9 @@
       function buscarDNI(dni) {
         letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
         let code = parseInt(dni.slice(0, 8));
-        let letra = dni.charAt(8);
+        let letra = dni.charAt(8).toUpperCase();
         let validacion = letras[code % 23];
+        return  validacion == letra ;
       }
       console.log(buscarDNI('44092112P'));
     </script>
