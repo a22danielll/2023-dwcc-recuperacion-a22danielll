@@ -7,12 +7,13 @@
   </head>
   <body>
     <script>
-      let mac = '01:32:54:67:89:AB';
-      let exp =/^([\w^_]{2}:){5}([\w]{2})$/;
-      if (exp.test(mac)) {
-        console.log('MAC correcta');
-      }else{
-        console.log('MAC incorrecta');
+      let color = "#000000";
+      let exp = /#([\da-zA-Z]{3,6})\b/;
+
+      if (exp.test(color)) {
+        console.log("color correcta");
+      } else {
+        console.log("color incorrecta");
       }
     </script>
   </body>

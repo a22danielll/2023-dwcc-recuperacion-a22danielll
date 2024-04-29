@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      function contrasena(pass) {
+        let minimo = /\w{8,}/;
+      let senEspacio = /[\s]/;
+      let mayusculas = /A-Z/;
+      let minusculas = /a-z/;
+      let numeros = /\d/;
+      let espciales = /[¡!$?%&#@/\()=¿?*[];,:._<>+-]/;
+        let count = 0;
+        if (!minimo.test(pass)) {
+          return true;
+        }
+        if (senEspacio.test(pass)) {
+          return false;
+        }
+        if (mayusculas.test(pass)) {
+          count++;
+        }
+        if (minusculas.test(pass)) {
+          count++;
+        }
+        if (numeros.test(pass)) {
+          count++;
+        }
+        if (espciales.test(pass)) {
+          count++;
+        }
+        if (count < 3) {
+          return false;
+        }
+        return true;
+      }
+      console.log(contrasena("danielLauroba"));
+
+      
+    </script>
+  </body>
+</html>

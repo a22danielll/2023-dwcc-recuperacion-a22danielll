@@ -7,12 +7,13 @@
   </head>
   <body>
     <script>
-      let mac = '01:32:54:67:89:AB';
-      let exp =/^([\w^_]{2}:){5}([\w]{2})$/;
-      if (exp.test(mac)) {
-        console.log('MAC correcta');
-      }else{
-        console.log('MAC incorrecta');
+      let valor = '-1.2 4 0 -123.5.';
+      let exp = /(-?\d+)(\d+)(-?\d+[.]\d+)(\d+[.]\d+)./;
+
+      if (exp.test(valor)) {
+        console.log("el valor es correcta");
+      } else {
+        console.log("el valor es incorrecta");
       }
     </script>
   </body>

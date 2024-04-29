@@ -25,7 +25,14 @@
         return array;
       }
 
-      function calcularMinasAdxacentes(arr, i, j) {
+      function calcularMinasAdxacentes(arr, fila, columna) {
+        let nMinas = 0;
+        for (let i = -1; i < arr.length; i++) {
+          if(i[fila,arr?.columna] == -1) nMinas++;
+          
+        }
+      }
+      /*function calcularMinasAdxacentes(arr, i, j) {
         let nMinas = 0;
         let nFilas = arr.length;
         let nColumnas = arr[i].length;
@@ -52,7 +59,7 @@
           nMinas++;
 
         return nMinas;
-      }
+      }*/
       arrayEntrada = [
         [0, 0, -1, 0],
         [0, -1, -1, 0],
