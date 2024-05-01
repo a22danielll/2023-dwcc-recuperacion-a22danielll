@@ -28,21 +28,21 @@
       function calcularMinasAdxacentes(arr, fila, columna) {
         let nMinas = 0;
 
-        for (let i = fila - 1; i < fila + 1; i++) {
-          console.log(i);
+        for (let i = fila - 1; i <= fila + 1; i++) {
+          for (let x = columna - 1; x <= columna + 1; x++) {
+            if(arr[i]?.[x]) nMinas++;
+          }
         }
 
-        /*for (let i = -1; i < arr.length; i++) {
-          if (i[(fila, columna)] == -1) nMinas++;
-        }*/
         return nMinas;
       }
+      
 
-      function imprimirCelasAdxacentes(fila, columna) {
-        // console.log(fila - 1);
-        // console.log(fila);
-        // console.log(fila + 1);
-        // for (let i = fila - 1; i < fila + 2; i++) {
+      /*function imprimirCelasAdxacentes(fila, columna) {
+         console.log(fila - 1);
+         console.log(fila);
+         console.log(fila + 1);
+         for (let i = fila - 1; i < fila + 2; i++) {
         for (let i = fila - 1; i <= fila + 1; i++) {
           for (let x = columna - 1; x <= columna + 1; x++) {
             console.log(i, x);
@@ -50,7 +50,7 @@
         }
       }
 
-      imprimirCelasAdxacentes(0, 3);
+      imprimirCelasAdxacentes(0, 3);*/
 
       /*function calcularMinasAdxacentes(arr, i, j) {
         let nMinas = 0;
@@ -89,7 +89,7 @@
         [1, -1, -1, 2],
       ];
 
-      //console.log(buscaminas(arrayEntrada));
+      console.log(buscaminas(arrayEntrada));
     </script>
   </body>
 </html>
