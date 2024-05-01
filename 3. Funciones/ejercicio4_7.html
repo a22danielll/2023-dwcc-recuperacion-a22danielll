@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let insultos = [
+        "testán",
+        "langrán",
+        "fervellasverzas",
+        "baldreo",
+        "lacazán",
+        "pillabán",
+      ];
+
+      function sustitucion(texto) {
+        for (let i = 0; i < insultos.length; i++) {
+          const element = insultos[i];
+          let exp = new RegExp(element);
+          let sustituir = element[0] + "*".repeat(element.length - 1);
+          texto = texto.replace(exp, sustituir);
+        }
+        return texto;
+
+        //return texto.substring(0, 1) + '*'.repeat(texto.length - 1);
+      }
+
+      console.log(sustitucion("Ti es un testán"));
+    </script>
+  </body>
+</html>
