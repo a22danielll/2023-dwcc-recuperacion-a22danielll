@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Users:</div>
+    <ul>
+      <li>John</li>
+      <li>Pete</li>
+    </ul>
+    <script>
+      let body = document.querySelectorAll('body');
+      body.forEach((x) =>
+        console.log(
+          x.querySelectorAll('div'),
+          x.querySelectorAll('ul'),
+          x.querySelectorAll('li')[1]
+        )
+      );
+    </script>
+  </body>
+</html>
