@@ -20,7 +20,7 @@
         for (let i = 0; i < insultos.length; i++) {
           const element = insultos[i];
           console.log(element);
-
+          
           let exp = new RegExp(element);
           let sustituir = element[0] + '*'.repeat(element.length - 1);
           texto = texto.replace(exp, sustituir);
