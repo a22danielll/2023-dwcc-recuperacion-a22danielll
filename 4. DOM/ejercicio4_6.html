@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arbore = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            'apple tree': {},
+            magnolia: {},
+          },
+        },
+      };
+
+      function createTree(data) {
+        let ul = document.createElement('ul');
+        for (const iterator in data) {
+          const element = data[iterator];
+          console.log(element);
+          let li = document.createElement('li');
+          li.textContent = iterator;
+          li.append(createTree(element));
+          ul.append(li);
+        }
+
+        return ul;
+      }
+      let ul = createTree(arbore);
+      let body = document.querySelector('body');
+      body.append(ul);
+    </script>
+  </body>
+</html>

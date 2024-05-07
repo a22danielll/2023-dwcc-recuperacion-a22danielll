@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="calendario"></div>
+    <script>
+      function crearCalendario(elemento, ano, mes) {
+        let dias = [
+          'Lunes',
+          'Martes',
+          'Miercoles',
+          'Jueves',
+          'Viernes',
+          'Sabado',
+          'Domingo',
+        ];
+        let meses = [
+          'Enero',
+          'Febrero',
+          'Marzo',
+          'Abril',
+          'Mayo',
+          'junio',
+          'Julio',
+          'Agosto',
+          'Septiembre',
+          'Octubre',
+          'Noviembre',
+          'Diciembre',
+        ];
+        let diasTotales = new Date(ano, mes, 0).getDate();
+        let diaSemana = new Date(ano, mes, 0).getDay();
+        console.log(diasTotales);
+
+        console.log(diaSemana);
+      }
+      let calendario = document.getElementById('calendario');
+      //crearCalendario(calendario, 2024, 5);
+      console.log(crearCalendario(calendario, 2024, 5));
+    </script>
+  </body>
+</html>
