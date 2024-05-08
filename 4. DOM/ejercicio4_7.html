@@ -43,17 +43,33 @@
         console.log(diaSemana);
 
         /**
-         * Crear enuncado mes y año 
+         * Crear enuncado mes y año
          */
         let h2 = document.createElement("h2");
-        h2.innerHTML = meses[mes -1 ] + ' '+ ano;
-        document.querySelector('#calendario').append(h2);
-        
+        h2.innerHTML = meses[mes - 1] + " " + ano;
+        document.querySelector("#calendario").append(h2);
+
+        /**
+         * Creacion de la tabla
+         */
+        let tabla = document.createElement("table");
+        //1º fila con los nombre de los dias de la semana
+        let tr = document.createElement("tr");
+        document.querySelector("#calendario").append(tabla);
+        tabla.append(tr);
         for (let i = 0; i < 7; i++) {
-          
-          
+          let th = document.createElement("th");
+          th.innerHTML = dias[i];
+          tr.append(th);
         }
 
+        //2º dias de la semana
+        for (let i = 0; i < 7; i++) {
+          //creacion fila del total de dias
+          let tr2 = document.createElement("tr");
+          for (let x = 0; x < 7; x++) {}
+          tabla.append(tr2);
+        }
       }
       let calendario = document.getElementById("calendario");
       //crearCalendario(calendario, 2024, 5);
