@@ -3,42 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
     <title>Document</title>
   </head>
   <body>
     <div id="calendario"></div>
     <script>
       function crearCalendario(elemento, ano, mes) {
+        //array de los dias de la semana
         let dias = [
-          'Lunes',
-          'Martes',
-          'Miercoles',
-          'Jueves',
-          'Viernes',
-          'Sabado',
-          'Domingo',
+          "Lunes",
+          "Martes",
+          "Miercoles",
+          "Jueves",
+          "Viernes",
+          "Sabado",
+          "Domingo",
         ];
+        //array de los meses del año
         let meses = [
-          'Enero',
-          'Febrero',
-          'Marzo',
-          'Abril',
-          'Mayo',
-          'junio',
-          'Julio',
-          'Agosto',
-          'Septiembre',
-          'Octubre',
-          'Noviembre',
-          'Diciembre',
+          "Enero",
+          "Febrero",
+          "Marzo",
+          "Abril",
+          "Mayo",
+          "junio",
+          "Julio",
+          "Agosto",
+          "Septiembre",
+          "Octubre",
+          "Noviembre",
+          "Diciembre",
         ];
+        //dias totales del mes
         let diasTotales = new Date(ano, mes, 0).getDate();
+        //dia del mes
         let diaSemana = new Date(ano, mes, 0).getDay();
         console.log(diasTotales);
-
         console.log(diaSemana);
+
+        /**
+         * Crear enuncado mes y año 
+         */
+        let h2 = document.createElement("h2");
+        h2.innerHTML = meses[mes -1 ] + ' '+ ano;
+        document.querySelector('#calendario').append(h2);
+        
+        for (let i = 0; i < 7; i++) {
+          
+          
+        }
+
       }
-      let calendario = document.getElementById('calendario');
+      let calendario = document.getElementById("calendario");
       //crearCalendario(calendario, 2024, 5);
       console.log(crearCalendario(calendario, 2024, 5));
     </script>
