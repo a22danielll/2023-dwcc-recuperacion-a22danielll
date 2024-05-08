@@ -53,7 +53,7 @@
         //dias totales del mes
         let diasTotales = new Date(ano, mes, 0).getDate();
         //dia del mes
-        let diaSemana = new Date(ano, mes, 0).getDay();
+        let diaSemana = new Date(ano, mes-1, 0).getDay();
         console.log(diasTotales);
         console.log(diaSemana);
 
@@ -99,8 +99,8 @@
         }
       }
       let calendario = document.getElementById("calendario");
-      //crearCalendario(calendario, 2024, 5);
-      console.log(crearCalendario(calendario, 2024, 5));
+      crearCalendario(calendario, 2024, 5);
+      
     </script>
   </body>
 </html>
