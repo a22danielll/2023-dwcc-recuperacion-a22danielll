@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <a id="sweeties">Sweeties (click me)!</a>
+    <div id="menu">
+      <ul>
+        <li>cake</li>
+      </ul>
+      <ul>
+        <li>donut</li>
+      </ul>
+      <ul>
+        <li>honey</li>
+      </ul>
+    </div>
+    <script>
+      let sweeties = document.getElementById("sweeties");
+      let menu = document.getElementById("menu");
+      sweeties.addEventListener('click',function(){
+        if(menu.hidden== true){
+            menu.hidden= false;
+        }else{
+            menu.hidden= true;
+        }
+      });
+    </script>
+  </body>
+</html>
