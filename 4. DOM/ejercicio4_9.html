@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="listaAnimais">
+      <li>
+        Animals
+        <ul>
+          <li>
+            Mammals
+            <ul>
+              <li>Cows</li>
+              <li>Donkeys</li>
+              <li>Dogs</li>
+              <li>Tigers</li>
+            </ul>
+          </li>
+          <li>
+            Other
+            <ul>
+              <li>Snakes</li>
+              <li>Birds</li>
+              <li>Lizards</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Fishes
+        <ul>
+          <li>
+            Aquarium
+            <ul>
+              <li>Guppy</li>
+              <li>Angelfish</li>
+            </ul>
+          </li>
+          <li>
+            Sea
+            <ul>
+              <li>Sea trout</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      let animales = document.querySelector("#listaAnimais");
+      /**
+       * 1º ul
+       */
+      for (let iterator of animales.children) {
+        //console.log( iterator);
+        let ul = iterator.querySelector("ul");
+        //console.log(ul);
+
+        let total = ul.children.length;
+        console.log(total);
+        iterator.firstChild.textContent += "[" + total + "]";
+        /**
+         * 2º ul
+         */
+        for (const iterator2 of ul.children) {
+          let ul2 = iterator2.querySelector("ul");
+          console.log(ul2);
+          let total2 = ul2.children.length;
+          console.log("total2: " + total2);
+          iterator2.firstChild.textContent += "[" + total2 + "]";
+        }
+      }
+    </script>
+  </body>
+</html>
