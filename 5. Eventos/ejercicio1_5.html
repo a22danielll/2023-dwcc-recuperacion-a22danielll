@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <img src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg" alt="">
-    <script></script>
-</body>
+  </head>
+  <body>
+    <img
+      id="imagen"
+      src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg"
+      alt=""
+    />
+    <script>
+      let imagen = document.querySelector("#imagen");
+      imagen.addEventListener("click", function () {
+        console.log("click en la iamgen");
+      });
+      imagen.addEventListener("dblclick", function () {
+        console.log(" doble click en la iamgen");
+      });
+      imagen.addEventListener("contextmenu", function () {
+        console.log("contexto del menu en la imagen");
+      });
+      imagen.addEventListener("mousedown", function () {
+        console.log("mouse down en la imagen");
+      });
+      imagen.addEventListener("mouseup", function () {
+        console.log("mouse up en la imagen");
+      });
+      imagen.addEventListener("wheel", function () {
+        console.log(" wheel en la imagen");
+      });
+      imagen.addEventListener("mouseover", function () {
+        console.log(" mouseover en la imagen");
+      });
+      imagen.addEventListener("mouseout", function () {
+        console.log(" mouseout en la imagen");
+      });
+      imagen.addEventListener("dragstart", function () {
+        console.log(" dragstart en la imagen");
+      });
+      imagen.addEventListener("drag", function () {
+        console.log(" drag en la imagen");
+      });
+      imagen.addEventListener("dragend", function () {
+        console.log(" dragend en la imagen");
+      });
+    </script>
+  </body>
 </html>
