@@ -84,6 +84,7 @@
       let eliminar = document.getElementsByClassName("remove-button");
       for (let iterator of eliminar) {
         console.log(iterator);
+        console.log(eliminar[iterator]);
         iterator.addEventListener("click", function () {
           eliminar = iterator.closest("div");
         });
