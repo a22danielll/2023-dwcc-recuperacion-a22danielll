@@ -33,16 +33,18 @@
       </tbody>
     </table>
     <script>
-        let tabla = document.querySelector('#taboaOrdenar');
-        let nome = Array.from(tabla.tBodies[0].rows);
-        console.log(nome);
-        nome.sort((x,y)=>{
-            return x.cells[0].textContent.localeCompare(y.cells[0].textContent);
-        });
-        for (const iterator of nome) {
-          console.log(iterator);
-            tabla.tBodies[0].appendChild(iterator);
-        }
+      let tabla = document.querySelector('#taboaOrdenar');
+      let nome = Array.from(tabla.tBodies[0].rows);
+      console.log(nome);
+
+      console.log(nome);
+      nome.sort((x, y) => {
+        return x.cells[0].textContent.localeCompare(y.cells[0].textContent);
+      });
+      for (const iterator of nome) {
+        console.log(iterator);
+        tabla.tBodies[0].appendChild(iterator);
+      }
     </script>
   </body>
 </html>

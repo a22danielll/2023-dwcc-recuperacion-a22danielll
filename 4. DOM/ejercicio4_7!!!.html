@@ -15,7 +15,7 @@
         width: 100px;
         height: 10px;
       }
-      th{
+      th {
         background-color: lightgray;
       }
     </style>
@@ -27,53 +27,53 @@
       function crearCalendario(elemento, ano, mes) {
         //array de los dias de la semana
         let dias = [
-          "Lunes",
-          "Martes",
-          "Miercoles",
-          "Jueves",
-          "Viernes",
-          "Sabado",
-          "Domingo",
+          'Lunes',
+          'Martes',
+          'Miercoles',
+          'Jueves',
+          'Viernes',
+          'Sabado',
+          'Domingo',
         ];
         //array de los meses del año
         let meses = [
-          "Enero",
-          "Febrero",
-          "Marzo",
-          "Abril",
-          "Mayo",
-          "junio",
-          "Julio",
-          "Agosto",
-          "Septiembre",
-          "Octubre",
-          "Noviembre",
-          "Diciembre",
+          'Enero',
+          'Febrero',
+          'Marzo',
+          'Abril',
+          'Mayo',
+          'junio',
+          'Julio',
+          'Agosto',
+          'Septiembre',
+          'Octubre',
+          'Noviembre',
+          'Diciembre',
         ];
         //dias totales del mes
         let diasTotales = new Date(ano, mes, 0).getDate();
-        //dia del mes
-        let diaSemana = new Date(ano, mes-1, 0).getDay();
+        // último dia del mes anterior
+        let ultimoDiaMesAnterior = new Date(ano, mes - 1, 0).getDay();
         console.log(diasTotales);
-        console.log(diaSemana);
+        console.log(ultimoDiaMesAnterior);
 
         /**
          * Crear enuncado mes y año
          */
-        let h2 = document.createElement("h2");
-        h2.innerHTML = meses[mes - 1] + " " + ano;
-        document.querySelector("#calendario").append(h2);
+        let h2 = document.createElement('h2');
+        h2.innerHTML = meses[mes - 1] + ' ' + ano;
+        document.querySelector('#calendario').append(h2);
 
         /**
          * Creacion de la tabla
          */
-        let tabla = document.createElement("table");
+        let tabla = document.createElement('table');
         //1º fila con los nombre de los dias de la semana
-        let tr = document.createElement("tr");
-        document.querySelector("#calendario").append(tabla);
+        let tr = document.createElement('tr');
+        document.querySelector('#calendario').append(tabla);
         tabla.append(tr);
         for (let i = 0; i < 7; i++) {
-          let th = document.createElement("th");
+          let th = document.createElement('th');
           th.innerHTML = dias[i];
           tr.append(th);
         }
@@ -81,26 +81,32 @@
         //2º dias de la semana
         //creacion fila del total de dias
         let inicio = 1;
-        for (let i = 0; i < 6; i++) {
-          let tr2 = document.createElement("tr");
+        let numFilas = 1;
+        for (let i = 0; i < 5; i++) {
+          let tr2 = document.createElement('tr');
+
           //creando columnas del total de dias
           for (let x = 0; x < 7; x++) {
-            if (i == 0 && x < diaSemana) {
-              let td2 = document.createElement("td");
-              td2.innerHTML = " ";
-              tabla.append(td2);
+            if (i == 0 && x < ultimoDiaMesAnterior) {
+              let td2 = document.createElement('td');
+              td2.innerHTML = ' ';
+              tr2.append(td2);
             } else if (inicio <= diasTotales) {
-              let td3 = document.createElement("td");
+              let td3 = document.createElement('td');
               td3.innerHTML = inicio++;
-              tabla.append(td3);
+              tr2.append(td3);
             }
           }
+
           tabla.append(tr2);
+          if (tr2.innerHTML == '') {
+            console.log(tr2);
+            tr2.remove();
+          }
         }
       }
-      let calendario = document.getElementById("calendario");
-      crearCalendario(calendario, 2024, 5);
-      
+      let calendario = document.getElementById('calendario');
+      crearCalendario(calendario, 2021, 2);
     </script>
   </body>
 </html>
