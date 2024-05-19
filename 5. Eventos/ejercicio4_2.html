@@ -47,7 +47,18 @@
       </li>
     </ul>
     <script>
-        
+      let lista = document.getElementById("tree");
+      lista.addEventListener("click", function (e) {
+        let minimizar = e.target.children;
+        for (let iterator of minimizar) {
+          console.log(iterator);
+          if (iterator.hidden == false) {
+            iterator.hidden = true;
+          } else {
+            iterator.hidden = false;
+          }
+        }
+      });
     </script>
   </body>
 </html>
