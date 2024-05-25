@@ -15,6 +15,21 @@
       * {
         box-sizing: border-box;
       }
+      .error {
+        width  : 100%;
+        padding: 0;
+
+        font-size: 80%;
+        color: white;
+        background-color: #900;
+        border-radius: 0 0 5px 5px;
+
+        box-sizing: border-box;
+      }
+
+      .error.active {
+        padding: 0.3em;
+      }
     </style>
   </head>
 
@@ -24,21 +39,32 @@
         >I would like you to provide me with an e-mail address:</label
       >
       <input type="email" id="mail" name="mail" minlength="10" required />
-      <span id="error" class="error active"></span>
+      <span  class="error active"></span>
       <button>Submit</button>
     </form>
   </body>
   <script>
-    const email = document.getElementById("mail");
-    const form = document.getElementsByTagName("form");
-    const error = document.getElementById("error");
+    let email = document.getElementById("mail");
+    let form = document.getElementsByTagName("form");
+    let emailError = document.querySelector('#mail + span.error');
+
     email.addEventListener("input", function (event) {
-      if (email.validity.typeMismatch) {
-        email.setCustomValidity("I am expecting an e-mail address!");
-        email.reportValidity();
+      if (email.validity.valid) {
+        emailError.innerHTML("");
+        email.className='error';
       } else {
-        email.setCustomValidity("");
+        showError();
       }
     });
+    
+    function showError(){
+      if(email.validity.typeMismatch) {
+        emailError.innerHTML='necesitas el valor del correo correcto';
+      }else if(email.validity.valueMissing) {
+        emailError.innerHTML='Escribe un correo valido';
+      }else if(email.validity.tooShort){
+        emailError.innerHTML='el email no supero el minimo de caracteres: '+email.minLength;
+      }
+    }
   </script>
 </html>
