@@ -11,18 +11,29 @@
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome">
         <br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <br><br>
         <label>Sexo:</label>
-        <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
-        <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+        <label><input type="radio" id="sexo" name="sexo" value="masculino"> Masculino</label>
+        <label><input type="radio" id="sexo" name="sexo" value="feminino"> Feminino</label>
         <br><br>
         <label>Aficiones:</label>
-        <label><input type="checkbox"  value="deporte"> Deporte</label>
-        <label><input type="checkbox"  value="musica"> Música</label>
+        <label><input type="checkbox" id="aficiones" name="aficiones" value="deporte"> Deporte</label>
+        <label><input type="checkbox" id="aficiones" name="aficiones" value="musica"> Música</label>
         <br><br>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="btn">Enviar</button>
     </form>
+    <script>
+        let btnm = document.getElementById("formulario");
+        btnm.addEventListener('click',function(e) {
+            let sexo = document.getElementById("sexo").value;
+            let aficiones = document.getElementById("aficiones").value;
+            //JSON.stringify(sexo);
+            //JSON.stringify(aficiones);
+            localStorage.setItem('sexo1',sexo);
+            localStorage.getItem('sexo1');
+            
+            localStorage.setItem('aficiones1',aficiones);
+            localStorage.getItem('aficiones1');
+        });
+    </script>
 </body>
 </html>
