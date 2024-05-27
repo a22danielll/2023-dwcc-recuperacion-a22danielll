@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .x{
+            color: red;
+            margin-left: 10px;
+        }
+        li{
+            margin-bottom: 10px;
+        }
+        div{
+            margin-bottom:10px;
+        }
+        ol{
+            margin-bottom:10px;
+        }
+    </style>
     <title>Document</title>
   </head>
   <body>
@@ -36,21 +51,53 @@
       btnAdd.addEventListener("click", function (e) {
         try {
           let elementos = document.getElementById("elementos").value;
-          //cfreamos un elemento li
+          //creamos un elemento li
           let li = document.createElement("li");
+          //elemento para eliminar los elementtos individualmente
+          let remove = document.createElement("button");
+          remove.setAttribute("class",'x')
           //let ul = document.getElementById("lista");
+          li.setAttribute("value", elementos);
           if (elementos != "") {
-            li.setAttribute("value", elementos);
             li.textContent = elementos;
+            remove.textContent=' (remove)';
+            li.append(remove);
             ul.append(li);
-          } else {
-            elementos = "";
+            
           }
         } catch (error) {
           console.error(error);
         }
-        elementos.textContent = "";
+        elementos.value = "";
       });
+
+      filter.addEventListener("input", function (e) {
+        let filtrado = filter.value;
+        let lis = ul.getElementsByTagName("li");
+        console.log(lis);
+        for (const iterator of lis) {
+          let texto = iterator.textContent;
+          if (texto.includes(filtrado)) {
+            iterator.style.display = "block";
+          } else {
+            iterator.style.display = "none";
+          }
+        }
+      });
+      btnTodo.addEventListener("click", function (e) {
+        let element = [...ul.getElementsByTagName("li")];
+        console.log(element);
+        for (const iterator of element) {
+          iterator.remove();
+        }
+      });
+      ul.addEventListener("click", function (e) {
+        let eliminar = e.target;
+        console.log(eliminar);
+        if(eliminar.tagName == 'BUTTON'){
+            e.target.parentElement.remove();
+        }
+      })
     </script>
   </body>
 </html>
