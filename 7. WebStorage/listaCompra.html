@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <h2>Lista de la compra</h2>
+      <h2>Lista de la compra</h2>
+      <div>
         <div>
-            <label for="">Compra: <input type="text" id="elementos"/></label>
-            <button type="button" id="add">Añadir</button>
-            <ul id="lista">
-                <ol>Lista de la compra</ol>
-                
-            </ul>
-            <button>Borrar todo</button>
+          <label>Compra: <input type="text" id="elementos" /></label>
+          <button type="submit" id="add">Añadir</button>
         </div>
+        <div>
+          <label for=""
+            >Filtrar: <input type="text" id="filter" placeholder="filter"
+          /></label>
+        </div>
+        <ul id="lista">
+          <ol>
+            Lista de la compra
+          </ol>
+        </ul>
+
+        <button type="submit" id="btnEliminarTodo">Borrar todo</button>
+      </div>
     </div>
-</body>
+    <script>
+      let btnAdd = document.getElementById("add");
+      let btnTodo = document.getElementById("btnEliminarTodo");
+      let filter = document.getElementById("filter");
+      let ul = document.getElementById("lista");
+
+      btnAdd.addEventListener("click", function (e) {
+        try {
+          let elementos = document.getElementById("elementos").value;
+          //cfreamos un elemento li
+          let li = document.createElement("li");
+          //let ul = document.getElementById("lista");
+          if (elementos != "") {
+            li.setAttribute("value", elementos);
+            li.textContent = elementos;
+            ul.append(li);
+          } else {
+            elementos = "";
+          }
+        } catch (error) {
+          console.error(error);
+        }
+        elementos.textContent = "";
+      });
+    </script>
+  </body>
 </html>
