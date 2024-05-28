@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * solucion con setInterval
+       **/
+      function escribirNumerosInterval(desde, ata) {
+        let interval = setInterval(() => {
+          if (desde < ata) {
+            desde++;
+            console.log(desde);
+          }
+        }, 1000);
+      }
+
+      escribirNumerosInterval(1, 10);
+
+      /**
+       * Solucion con setTimeout
+       **/
+      function escribirNumerosTimeOut(desde, ata) {
+        if (desde < ata)
+          setTimeout(() => {
+            escribirNumerosTimeOut(desde + 1, ata);
+            console.log(desde);
+          }, 1000);
+      }
+      //escribirNumerosTimeOut(1,10);
+    </script>
+  </body>
+</html>
