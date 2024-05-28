@@ -35,6 +35,7 @@
     <script>
       let btnm = document.getElementById('formulario');
       btnm.addEventListener('click', function (e) {
+        let nome = document.getElementById('nome').value;
         let sexo = document.getElementsByName('sexo');
         let aficiones = document.getElementsByName('aficiones');
         console.log(sexo);
@@ -42,7 +43,8 @@
         //JSON.stringify(sexo);
         //JSON.stringify(aficiones);
         
-
+        localStorage.setItem('nome1',nome);
+        localStorage.getItem('nome1');
         if (sexo[0].checked == true) {
           console.log('masculino');
           localStorage.setItem('sexo1', sexo[0].value);
