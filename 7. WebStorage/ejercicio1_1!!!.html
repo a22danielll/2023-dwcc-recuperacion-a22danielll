@@ -41,9 +41,9 @@
 
         //JSON.stringify(sexo);
         //JSON.stringify(aficiones);
-        //console.log(sexo[0].checked);
+        
 
-        /*if (sexo[0].checked == true) {
+        if (sexo[0].checked == true) {
           console.log('masculino');
           localStorage.setItem('sexo1', sexo[0].value);
           localStorage.getItem('sexo1');
@@ -51,7 +51,7 @@
           console.log('femenino');
           localStorage.setItem('sexo1', sexo[1].value);
           localStorage.getItem('sexo1');
-        }*/
+        }
 
         let arrayAficcions = [];
 
@@ -71,7 +71,7 @@
         console.log(arrayAficcions);
         localStorage.setItem('aficiones1', JSON.stringify(arrayAficcions));
         JSON.parse(localStorage.getItem('aficiones1'));
-        //localStorage.getItem('aficiones1');
+        
       });
     </script>
   </body>
