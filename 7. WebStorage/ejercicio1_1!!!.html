@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>LocalStorage</h1>
     <form id="formulario">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
-        <br><br>
-        <label>Sexo:</label>
-        <label><input type="radio" id="sexo" name="sexo" value="masculino"> Masculino</label>
-        <label><input type="radio" id="sexo" name="sexo" value="feminino"> Feminino</label>
-        <br><br>
-        <label>Aficiones:</label>
-        <label><input type="checkbox" id="aficiones" name="aficiones" value="deporte"> Deporte</label>
-        <label><input type="checkbox" id="aficiones" name="aficiones" value="musica"> Música</label>
-        <br><br>
-        <button type="submit" id="btn">Enviar</button>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" />
+      <br /><br />
+      <label>Sexo:</label>
+      <label
+        ><input type="radio" key="sexo1" name="sexo" value="masculino" />
+        Masculino</label
+      >
+      <label
+        ><input type="radio" key="sexo1" name="sexo" value="feminino" />
+        Feminino</label
+      >
+      <br /><br />
+      <label>Aficiones:</label>
+      <label
+        ><input type="checkbox" name="aficiones" value="deporte" />
+        Deporte</label
+      >
+      <label
+        ><input type="checkbox" name="aficiones" value="musica" /> Música</label
+      >
+      <br /><br />
+      <button type="submit" id="btn">Enviar</button>
     </form>
     <script>
-        let btnm = document.getElementById("formulario");
-        btnm.addEventListener('click',function(e) {
-            let sexo = document.getElementById("sexo").value;
-            let aficiones = document.getElementById("aficiones").value;
-            //JSON.stringify(sexo);
-            //JSON.stringify(aficiones);
-            localStorage.setItem('sexo1',sexo);
-            localStorage.getItem('sexo1');
-            
-            localStorage.setItem('aficiones1',aficiones);
-            localStorage.getItem('aficiones1');
-            
-        });
+      let btnm = document.getElementById('formulario');
+      btnm.addEventListener('click', function (e) {
+        let sexo = document.getElementsByName('sexo');
+        let aficiones = document.getElementsByName('aficiones');
+        console.log(sexo);
+
+        //JSON.stringify(sexo);
+        //JSON.stringify(aficiones);
+        //console.log(sexo[0].checked);
+
+        /*if (sexo[0].checked == true) {
+          console.log('masculino');
+          localStorage.setItem('sexo1', sexo[0].value);
+          localStorage.getItem('sexo1');
+        } else if (sexo[1].checked == true) {
+          console.log('femenino');
+          localStorage.setItem('sexo1', sexo[1].value);
+          localStorage.getItem('sexo1');
+        }*/
+
+        let arrayAficcions = [];
+
+        for (let i = 0; i < aficiones.length; i++) {
+          if (aficiones[i].checked) {
+            arrayAficcions.push(aficiones[i].value);
+            console.log(aficiones[i].value);
+
+            JSON.parse(localStorage.getItem('aficiones1'));
+          }
+        }
+        // Mostrar por consola o array de aficcións:
+        // []
+        // [Deporte]
+        // [Música]
+        // [Deporte, Musica]
+
+        console.log('Array de aficcións');
+        console.log(arrayAficcions);
+        localStorage.setItem('aficiones1', JSON.stringify(arrayAficcions));
+
+        //localStorage.getItem('aficiones1');
+      });
     </script>
-</body>
+  </body>
 </html>
