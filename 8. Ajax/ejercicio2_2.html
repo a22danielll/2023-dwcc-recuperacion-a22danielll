@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Our superheroes</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Faster+One"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="ejercicio2_2.css" />
+  </head>
+
+  <body>
+    <header></header>
+
+    <section></section>
+
+    <script>
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "ejercicio2_2.json");
+      xhr.responseType = "json";
+      xhr.send();
+
+      xhr.addEventListener("load", function (e) {
+        let heroes = xhr.response;
+        let header = document.getElementsByTagName("header")[0];
+        let section = document.getElementsByTagName("section")[0];
+        let h1 = document.createElement("h1");
+        let p = document.createElement("p");
+
+        /**
+         * TITULO
+         **/
+        h1.textContent = heroes.squadName;
+        header.appendChild(h1);
+
+        /**
+         * SUBTITULO
+         **/
+
+        p.textContent =
+          "Hometown: " + heroes.homeTown + " // formed: " + heroes.formed;
+        header.appendChild(p);
+
+        /**
+         * CUERPO
+         **/
+
+         for (const iterator of heroes.members) {
+            console.log(iterator);
+            let article = document.createElement("article");
+            let h2 = document.createElement("h2");
+            let p2 = document.createElement("p");
+            let p3 = document.createElement("p");
+            let p4 = document.createElement("p");
+            let ul = document.createElement("ul");
+
+            for (const names of iterator) {
+                
+            }
+            
+         }
+      });
+    </script>
+  </body>
+</html>
