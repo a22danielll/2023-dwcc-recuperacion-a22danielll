@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET','ejercicio2_1.json');
+        xhr.responseType = "json";
+        xhr.send();
+        xhr.addEventListener('load',function(){
+            let gatos = xhr.response;
+            let body = document.getElementsByTagName('body')[0];
+            let p = document.createElement('p');
+            let p2 = document.createElement('p');
+            let masculino =0;
+            let femenino=0;
+            //Mostrar nombre de los gatos
+            for (let i = 0; i < gatos.length; i++) {
+                const element = gatos[i];
+                console.log(gatos[0].name+', '+gatos[1].name+', '+gatos[2].name);
+                p.textContent='Los nombres de las gatas son: '+gatos[0].name+', '+gatos[1].name+', '+gatos[2].name;
+                body.append(p);
+            }
+
+            //Numeros de gatos
+            for (const i of gatos) {
+                //console.log(i);
+                for (const x of i.kittens) {
+                    //console.log(x);
+                    if(x.gender=='m') masculino++;
+                    if(x.gender =='f') femenino++;
+                }
+            }
+            let total = masculino+femenino;
+            console.log(total);
+            p2.textContent='Hay un total de '+ total +' gatos. Hay '+masculino+' machos y '+femenino+' fermias';
+            body.append(p2);
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .color1{
+            color: blue;
+        }
+        .color2{
+            color: green;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">titulo</h1>
+    <button type="submit" id="start" >start</button>
+    <button type="submit" id="stop">stop</button>
+    <script>
+        let h1 = document.getElementById("titulo");
+        let start = document.getElementById("start");
+        let stop = document.getElementById("stop");
+        let color;
+        start.addEventListener("click",function(e){
+            color=setInterval(()=>{
+                h1.classList = h1.classList== '' ?'color1':'color2';
+            },1000);
+        });
+
+        stop.addEventListener("click",function(){
+            clearInterval(color);
+        });
+    </script>
+</body>
+</html>
