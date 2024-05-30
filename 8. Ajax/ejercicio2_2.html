@@ -19,16 +19,16 @@
 
     <script>
       const xhr = new XMLHttpRequest();
-      xhr.open("GET", "ejercicio2_2.json");
-      xhr.responseType = "json";
+      xhr.open('GET', 'ejercicio2_2.json');
+      xhr.responseType = 'json';
       xhr.send();
 
-      xhr.addEventListener("load", function (e) {
+      xhr.addEventListener('load', function (e) {
         let heroes = xhr.response;
-        let header = document.getElementsByTagName("header")[0];
-        let section = document.getElementsByTagName("section")[0];
-        let h1 = document.createElement("h1");
-        let p = document.createElement("p");
+        let header = document.getElementsByTagName('header')[0];
+        let section = document.getElementsByTagName('section')[0];
+        let h1 = document.createElement('h1');
+        let p = document.createElement('p');
 
         /**
          * TITULO
@@ -41,27 +41,39 @@
          **/
 
         p.textContent =
-          "Hometown: " + heroes.homeTown + " // formed: " + heroes.formed;
+          'Hometown: ' + heroes.homeTown + ' // formed: ' + heroes.formed;
         header.appendChild(p);
 
         /**
          * CUERPO
          **/
 
-         for (const iterator of heroes.members) {
-            console.log(iterator);
-            let article = document.createElement("article");
-            let h2 = document.createElement("h2");
-            let p2 = document.createElement("p");
-            let p3 = document.createElement("p");
-            let p4 = document.createElement("p");
-            let ul = document.createElement("ul");
+        for (let iterator of heroes.members) {
+          console.log(iterator);
+          let article = document.createElement('article');
+          let h2 = document.createElement('h2');
+          let p2 = document.createElement('p');
+          let p3 = document.createElement('p');
+          let p4 = document.createElement('p');
+          let ul = document.createElement('ul');
 
-            for (const names of iterator) {
-                
-            }
-            
-         }
+          h2.textContent = iterator.name;
+          p2.textContent = 'Secret identity: ' + iterator.secretIdentity;
+          p3.textContent = 'Age: ' + iterator.age;
+          p4.textContent = 'Superpowers:';
+          for (const x of iterator.powers) {
+            console.log(x);
+            let li = document.createElement('li');
+            li.textContent = x;
+            ul.append(li);
+          }
+          article.append(h2);
+          article.append(p2);
+          article.append(p3);
+          article.append(p4);
+          article.append(ul);
+          section.append(article);
+        }
       });
     </script>
   </body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">cargar</button>
+    <div id="container"></div>
+    <script>
+      document.getElementById('btn').addEventListener('click', function (e) {
+        fetch('https://randomuser.me/api/')
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+          })
+          .then((data) => {
+            let h1 = document.createElement('h1');
+            let container = document.getElementById('container');
+            for (const iterator of data.results) {
+              h1.textContent =
+                iterator.name.title +
+                ' ' +
+                iterator.name.first +
+                ' ' +
+                iterator.name.last;
+
+              container.append(h1);
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const posts = [{ titulo: 'Titulo 1' }, { titulo: 'Titulo 2' }];
+      function createPost(post) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(posts.push(post));
+          }, 2000);
+        });
+      }
+      function getPosts() {
+        setTimeout(() => {
+          posts.forEach(function (post) {
+            console.log(post);
+          }, 1000);
+        });
+      }
+      createPost({ titulo: 'Titulo 3' }).then(getPosts);
+      //getPosts();
+    </script>
+  </body>
+</html>
