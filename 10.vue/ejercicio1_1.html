@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{title}}</p>
+        <button>{{count}}</button>
+        <p>{{boolean}}</p>
+        <p>{{array}}</p>
+        <p>{{object}}</p>
+        
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+        data() {
+          return {
+            title: 'titulo',
+            count: 0,
+            boolean: true,
+            array: ['papel', 'boli'],
+            object: { tipo: 'coche', marca: 'ford' },
+          };
+        },
+      }).mount('#app');
+    </script>
+</body>
+</html>
