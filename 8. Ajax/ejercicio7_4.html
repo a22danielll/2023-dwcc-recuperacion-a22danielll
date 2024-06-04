@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="search" />
+    <table id="table">
+      <tr>
+        <th>Nome</th>
+        <th>Numero de habitantes</th>
+        <th>Superficie</th>
+        <th>Capital</th>
+      </tr>
+    </table>
+    <script>
+      async function municipios() {
+        let response = await fetch("municipiosCoruna.json");
+        let json = await response.json();
+
+        json.forEach((element) => {
+          let table = document.getElementById("table");
+          let tr = document.createElement("tr");
+
+          let td = document.createElement("td");
+          let td2 = document.createElement("td");
+          let td3 = document.createElement("td");
+          let td4 = document.createElement("td");
+
+          table.append(tr);
+          tr.append(td);
+          tr.append(td2);
+          tr.append(td3);
+          tr.append(td4);
+          td.innerText = element.Denominación;
+          td2.innerText = element.Habitantes;
+          td3.innerText = element.Superficie;
+          td4.innerText = element.Capitalidad;
+        });
+      }
+
+      search.addEventListener("input", function filtrar() {
+        let input = document.getElementById("search");
+        let filtro = input.value.toLowerCase();
+        let tabla = document.getElementById("table");
+        let tr = document.getElementsByTagName("tr");
+        for (let i = 1; i < tr.length; i++) {
+          let name = tr[i]
+            .getElementsByTagName("td")[0]
+            .textContent.toLowerCase();
+          if (name.startsWith(filtro)) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      });
+      municipios();
+    </script>
+  </body>
+</html>

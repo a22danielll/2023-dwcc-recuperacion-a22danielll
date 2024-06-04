@@ -9,26 +9,34 @@
     <button id="btn">cargar</button>
     <div id="container"></div>
     <script>
-      document.getElementById('btn').addEventListener('click', function (e) {
-        fetch('https://randomuser.me/api/')
+      document.getElementById("btn").addEventListener("click", function (e) {
+        fetch("https://randomuser.me/api/")
           .then((response) => {
             if (response.ok) {
               return response.json();
             }
           })
           .then((data) => {
-            let h1 = document.createElement('h1');
-            let container = document.getElementById('container');
-            for (const iterator of data.results) {
-              h1.textContent =
-                iterator.name.title +
-                ' ' +
-                iterator.name.first +
-                ' ' +
-                iterator.name.last;
-
-              container.append(h1);
-            }
+            let h1 = document.createElement("h1");
+            let container = document.getElementById("container");
+            let results = data.results[0];
+            console.log(results);
+            let image = document.createElement("img");
+            //let h2 = document.createElement("h2");
+            /*for (let i = 0; i < 4; i++) {
+              let p = document.createElement("p");
+            }*/
+            
+            container.innerHTML = `
+        <img src="${results.picture.large}" >
+        <h2>${results.name.first} ${results.name.last}</h2>
+        <p>Email: ${results.email}</p>
+        <p>Phone: ${results.phone}</p>
+        <p>City: ${results.location.city}</p>
+        <p>Country: ${results.location.country}</p>
+        <p>Age: ${results.dob.age}</p>
+        
+      `;
           });
       });
     </script>

@@ -16,7 +16,7 @@
     <section></section>
     <script>
       fetch(
-        'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json'
+        "https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json"
       )
         .then((response) => {
           if (response.ok) {
@@ -28,7 +28,7 @@
           console.log(`${data[0].name},${data[1].name},${data[2].name}`);
         });
       fetch(
-        'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'
+        "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
       )
         .then((response) => {
           if (response.ok) {
@@ -36,10 +36,10 @@
           }
         })
         .then((data) => {
-          let header = document.getElementsByTagName('header')[0];
-          let section = document.getElementsByTagName('section')[0];
-          let h1 = document.createElement('h1');
-          let p = document.createElement('p');
+          let header = document.getElementsByTagName("header")[0];
+          let section = document.getElementsByTagName("section")[0];
+          let h1 = document.createElement("h1");
+          let p = document.createElement("p");
 
           /**
            * TITULO
@@ -48,27 +48,27 @@
           header.append(h1);
 
           p.textContent =
-            'Hometown: ' + data.homeTown + ' // formed: ' + data.formed;
+            "Hometown: " + data.homeTown + " // formed: " + data.formed;
           header.append(p);
 
           /**
            * CUERPO
            **/
           for (const iterator of data.members) {
-            let article = document.createElement('article');
-            let h2 = document.createElement('h2');
-            let p2 = document.createElement('p');
-            let p3 = document.createElement('p');
-            let p4 = document.createElement('p');
-            let ul = document.createElement('ul');
+            let article = document.createElement("article");
+            let h2 = document.createElement("h2");
+            let p2 = document.createElement("p");
+            let p3 = document.createElement("p");
+            let p4 = document.createElement("p");
+            let ul = document.createElement("ul");
 
             h2.textContent = iterator.name;
-            p2.textContent = 'Age: ' + iterator.age;
-            p3.textContent = 'SecretIdentity: ' + iterator.secretIdentity;
-            p4.textContent = 'Powers: ';
+            p2.textContent = "Age: " + iterator.age;
+            p3.textContent = "SecretIdentity: " + iterator.secretIdentity;
+            p4.textContent = "Powers: ";
 
             for (const x of iterator.powers) {
-              let li = document.createElement('li');
+              let li = document.createElement("li");
               li.textContent = x;
               ul.append(li);
             }
