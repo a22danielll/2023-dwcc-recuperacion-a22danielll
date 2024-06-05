@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" @click="mostrarMensaje">Mensaje</button>
+      <br /><br />
+      <input type="text" @keydown="mostrarContido" />
+      <p>{{texto}}</p>
+
+      <input type="text" @keydown.enter="mostrarEnter" />
+      <p>{{texto2}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            texto: "",
+            texto2: "",
+          };
+        },
+        methods: {
+          mostrarMensaje() {
+            console.log("hola");
+          },
+          mostrarContido(e) {
+            this.texto = e.target.value;
+          },
+          mostrarEnter(e) {
+            this.texto2 = e.target.value;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

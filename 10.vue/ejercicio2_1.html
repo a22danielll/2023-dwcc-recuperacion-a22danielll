@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{nome}}</p>
+      <p>{{anoActual}}</p>
+      <p>{{anoActual+5}}</p>
+      <img :src />
+      <textarea>{{nome}}</textarea>
+      <p>{{contador}}</p>
+      <button @click="incrementar">incrementar</button>
+      <button @click="decrementar">decrementar</button>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            nome: "Daniel",
+            anoActual:2024,
+            src:'imagen.jpg',
+            contador:0,
+          };
+        },
+        methods:{
+            incrementar(){
+                this.contador++;
+            },
+            decrementar(){
+                this.contador--;
+            }
+        }
+      }).mount("#app");
+    </script>
+  </body>
+</html>

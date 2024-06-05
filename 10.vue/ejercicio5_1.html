@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <form action="">
+        <input type="text" v-model="mensaje" />
+        <p>{{mensaje}}</p>
+        <br />
+        <textarea v-model="mensaje2"></textarea>
+        <br />
+        <input type="checkbox" v-model="checked" value="check1" />
+        <label>checked1</label>
+        <input type="checkbox" v-model="checked" value="check2" />
+        <label>checked2</label>
+        <input type="checkbox" v-model="checked" value="check3" />
+        <label>checked3</label><br />
+        <label for="checkbox">{{ checked }}</label>
+        <br />
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option value="a">A</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+        </select>
+        <div>Selected: {{ selected }}</div>
+        <br>
+        <input type="radio" id="one" value="radio1" v-model="picked" />
+        <label>radio1</label>
+
+        <input type="radio" id="two" value="radio2" v-model="picked" />
+        <label>radio2</label>
+        <div>Picked: {{ picked }}</div>
+        <br>
+        <button @click="reset">reset</button>
+      </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      createApp({
+        data() {
+          return {
+            mensaje: "",
+            mensaje2: "",
+            checked: [],
+            selected:'',
+            picked:'',
+          };
+        },
+        methods: {
+            reset(){
+                this.mensaje='';
+                this.mensaje2 = '';
+                this.checked=[];
+                this.picked='';
+                this.selected='';
+            }
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

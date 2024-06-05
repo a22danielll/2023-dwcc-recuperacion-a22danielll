@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #container {
+        display: flex;
+      }
+       #container2 {
+        display: flex;
+        
+      }
+      .celda {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        margin: 10px;
+      }
+      .activa {
+        background-color: lightblue;
+        border: 2px solid blue;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="module">
+      import { createApp } from 'vue';
+
+      createApp({
+        data() {
+          return {
+            celda1: false,
+            celda2:false,
+            celda3: false,
+            celda4: false,
+          };
+        },
+        methods: {
+          manejoClases(celda) {
+            if (celda == 3) {
+              this.celda3 = !this.celda3;
+              this.celda4 = false;
+            } else if (celda == 4) {
+              this.celda4 = !this.celda4;
+              this.celda3 = false;
+            }
+          },
+          manejoClases2(celda) {
+            if (celda == 1) {
+              this.celda1 = !this.celda1;
+            } else if (celda == 2) {
+              this.celda2 = !this.celda2;
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+
+    <div id="app">
+      <div id="container2">
+        <div
+          class="celda"
+          @click="manejoClases2(1)"
+          :class="{ 'activa': celda1 }"
+        >
+          
+        </div>
+        <div
+          class="celda"
+          @click="manejoClases2(2)"
+          :class="{ 'activa': celda2 }"
+        >
+          
+        </div>
+        <div>espacio</div>
+      <div id="container">
+        <div
+          class="celda"
+          @click="manejoClases(3)"
+          :class="{ 'activa': celda3 }"
+        >
+          
+        </div>
+        <div
+          class="celda"
+          @click="manejoClases(4)"
+          :class="{ 'activa': celda4 }"
+        >
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

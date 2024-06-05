@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  id="app">
+        <label >numero 1:</label>
+        <input type="text" v-model="num1" @input="suma">
+        <label> numero 2</label>
+        <input type="text" v-model="num2" @input="suma">
+        <p id="total">{{total}} {{par(total)?'par':'impar'}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return{
+                    num1:0,
+                    num2:0,
+                    total:0,
+                }
+            },methods:{
+                suma(){
+                    this.total = parseFloat(this.num1) + parseFloat(this.num2);
+                },
+                par(e){
+                    return e%2==0;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
